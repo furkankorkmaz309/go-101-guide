@@ -1,3 +1,49 @@
+# Composite Types in Go
+
+## Arrays
+- Fixed-length data structures.
+- The length is part of the array's type.
+- Can be compared using `==` and `!=`.
+- Rarely used directly; mostly serve as the backing store for slices.
+
+## Slices
+- Dynamically-sized sequences.
+- Use `append` to grow.
+- Use `make` to set initial length and/or capacity.
+- `len()` returns length, `cap()` returns capacity.
+- `clear()` resets elements to zero value (length remains the same).
+- `copy()` creates independent slices.
+- Slices share memory—modifying one can affect others.
+- Use `slices.Equal()` to compare slices (Go 1.21+).
+
+## Strings, Bytes, and Runes
+- Strings are immutable sequences of UTF-8 bytes.
+- `len()` returns byte count, not character count.
+- Use `[]byte` or `[]rune` conversions for manipulation.
+- Beware of multi-byte characters when slicing.
+
+## Maps
+- Key-value pairs with dynamic sizing.
+- Writing to a `nil` map causes a panic.
+- Use `make` or `{}` to initialize.
+- Use `delete()` to remove a key.
+- Use `v, ok := map[key]` to safely check for key presence.
+- `clear()` removes all entries.
+- Use `maps.Equal()` for equality checks (Go 1.21+).
+- Can be used as sets with `map[T]bool` or `map[T]struct{}`.
+
+## Structs
+- Groups related fields into one type.
+- Access fields with dot notation (`.`).
+- Comparable if all fields are comparable.
+- Structs with the same field names, order, and types can be converted.
+- Anonymous structs are useful for short-lived or ad-hoc data structures.
+
+
+## 📂 Code
+
+```go
+// 01_slices_maps_structs.go
 package main
 
 import (
@@ -78,3 +124,4 @@ func main() {
 	person3.Age = 50
 	fmt.Println(person1, person2, person3) // {Alice 30} {Bob 40} {Charlie 50}
 }
+```

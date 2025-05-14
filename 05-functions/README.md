@@ -1,3 +1,61 @@
+# Chapter 5 - Functions (Quick Notes)
+
+## Declaring & Calling
+- `func name(params) returnType {}` is the basic structure.
+- Multiple inputs of the same type: `func f(x, y int)`
+- Use `return` to return values; if none, omit return.
+
+## Optional/Named Params
+- No true optional/named params.
+- Simulate with structs: pass a config struct with fields.
+
+## Variadic Params
+- `...type` for last param → creates a slice.
+- Example: `func addAll(nums ...int)` → `nums` is a slice.
+
+## Multiple Return Values
+- Functions can return multiple values: `(int, int, error)`
+- All return values must be used or ignored with `_`.
+
+## Named Return Values
+- Return vars can be named: `(x int, err error)`
+- Avoid blank returns (`return` without values) — not readable.
+
+## Functions as Values
+- Functions are first-class: can be assigned, passed, returned.
+- Define types with `type opFunc func(int, int) int`
+
+## Anonymous Functions
+- No name, used inline or assigned to vars.
+- Common in defer and goroutines.
+
+## Closures
+- Inner functions capture and modify outer variables.
+- Useful for creating stateful behaviors.
+
+## Higher-Order Functions
+- Functions can accept or return other functions.
+- Used in sorting, middleware, etc.
+
+## defer
+- Defers function execution until the surrounding function ends.
+- Useful for cleanup (e.g., `file.Close()`).
+- LIFO order; params evaluated immediately.
+
+## Call by Value
+- All values are copied into functions.
+- Maps/slices have internal pointers → changes may reflect outside.
+
+## Tips
+- Use `_` to ignore unused return values.
+- Avoid blank returns and shadowing named returns.
+- Use closures to reduce repeated code or manage state.
+
+
+## 📂 Code
+
+```go
+// 01_functions.go
 package main
 
 import (
@@ -96,3 +154,4 @@ func main() {
 	myNum := 3
 	fmt.Printf("square of %v is %v\n", myNum, square(myNum)) // square of 3 is 9
 }
+```
