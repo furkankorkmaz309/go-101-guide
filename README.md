@@ -1,6 +1,8 @@
-# Go 101: A Beginner's Guide to the Go Programming Language
+# Go 101 Guide: Personal Learning Notes for the Go Programming Language
 
-🚀 **This repository is a beginner-friendly guide to the Go programming language, inspired by _Learning Go (2nd Edition)_ by Jon Bodner (O'Reilly Media).**
+🧠 **This repository contains personal notes and code examples I wrote while studying _Learning Go (2nd Edition)_ by Jon Bodner (O'Reilly Media).**
+
+The goal of this project is to solidify my understanding of Go's core concepts through simple, focused code and practical explanations — and to create a reference I can come back to later.
 
 Each topic includes:
 - 🧪 A concise Go code example (`01_example.go`)
@@ -31,14 +33,6 @@ This guide walks through the following topics:
 
 ---
 
-## 👤 Who Is This For?
-
-- 🧑‍🎓 Developers new to Go  
-- 💻 Students or hobbyists learning systems programming  
-- 👀 Anyone who prefers to learn by reading and running code
-
----
-
 ## 🛠️ How to Use
 
 1. Clone the repository:
@@ -59,11 +53,6 @@ No frameworks. No tooling. Just Go.
 ---
 
 ## 🤔 Why This Exists
-
-There are many Go resources out there, but this guide is for people who learn best by:
-
 - 👓 Reading and modifying small, self-contained code examples  
 - ✍️ Writing their own notes along the way  
 - 🔁 Revisiting fundamental topics whenever needed
-
-You’re free to fork, remix, or expand this guide to match your own learning journey.
